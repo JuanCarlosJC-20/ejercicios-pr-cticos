@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Manejo Dom</title>
+</head>
+<body>  
+    <div class="contenedor">
+    <h1>Manejo Dom</h1>
+    <h2>1. Mostrar texto en pantalla<h2>
+
+    <button  onclick="mostrarMensaje()" id="boton">mostrar mensaje</button>
+    <p id="mensaje"></p>
+    </div>
+
+    <div class="contenedor">
+        <h1>Manejo DOM</h1>
+        <h2>2. Calculadora de suma</h2>
+        <h2>Suma</h2>
+
+        <h4>1, ingrese numero entero  </h4>
+        <input id="num1" type="number">
+         <h4>2, ingrese numero entero </h4>
+        <input id="num2" type="number">
+        <button onclick="sumar1()">sumar</button>
+        <p id="resultado"></p>
+
+    </div>
+
+    <div class="contenedor"  id="fondo">
+
+        <h1>Manejo DOM</h1>
+        <h3>3. Cambiar color de fondo</h3>
+
+        <button  id="rojo">Rojo</button>
+        <button  id="azul">Azul</button>
+        <button  id="verde">Verde</button>
+        <button  id="blanco">normal</button>
+
+    </div>
+
+    <div class="contenedor">
+        <h1>Manejo DOM</h1>
+        <h4>4. Contador de clic</h4>
+
+        <button onclick="contador()" id="boton">click</button>
+        <p id="contador">0</p>
+    </div>
+
+    <div class="contenedor">
+        <h1>Manejo DOM</h1>
+        <h4>5. Lista dinámica</h4>
+
+        <input id="tarea" type="text">
+        <button onclick="agregar()">añadir</button>
+        <h1>Lista</h1>
+        <div id="lista"></div>
+    </div>
+
+    <div class="contenedor">
+        <h1>Manejo DOM</h1>
+        <h4>6. Validación de formulario</h4>
+        <form>
+        <input id="nombre" type="text" placeholder="name" required>
+        <input id="email" type="email" placeholder="email" required>
+        <input id="numero" type="number"  placeholder="telefono"  required>
+       
+        <p id="datos"></p>
+        </form>
+            <button onclick="validar()" type="submit">enviar</button>
+      
+    </div>
+
+    <div class = "contenedor">
+        <h1>Manejo DOM</h1>
+        <h4>7. Calculadora básica</h4>
+        <input id="dato1" type="number">
+        <input id ="dato2" type="number">
+        <button onclick="sumar()">sumar</button>
+        <button onclick="restar()">restar</button>
+        <button onclick="multiplicar()">multiplicar</button>
+        <button onclick="dividir()">dividir</button>
+       
+        <p id="result"></p>
+    </div>
+
+    <div class="contenedor">
+        <h1>Manejo DOM</h1>
+        <h4>8. Eliminación de elementos de lista</h4>
+
+
+         <input id="tarea1" type="text">
+        <button onclick="agregar2()">añadir</button>
+        <button onclick="eliminar()" id="boton">eliminar</button>
+        <h1>Lista</h1>
+        <div id="lista1"></div>
+    </div>
+
+    
+
+
+    
+</body>
+<script src="script.js"></script>
+</html>
