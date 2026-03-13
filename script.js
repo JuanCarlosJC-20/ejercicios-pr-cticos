@@ -1,12 +1,12 @@
 
-
+//mostrar mensaje
 function mostrarMensaje(){
 var boton = document.getElementById("mensaje").innerHTML="hola mundo";
 }
 
 
 
-
+//suma de dos numeros
 function sumar1(){
     var num1 = parseInt(document.getElementById("num1").value);
     var num2 = parseInt(document.getElementById("num2").value);
@@ -17,7 +17,7 @@ function sumar1(){
  document.getElementById("resultado").innerHTML = suma;
 }
 
-
+//cambio de color
 document.getElementById("rojo").addEventListener("click",function(){
     var fondo = document.getElementById("fondo");
     fondo.style.backgroundColor = "red";
@@ -36,7 +36,7 @@ document.getElementById("blanco").addEventListener("click",function(){
 });
 
 
-
+//contador 
 function contador(){
     var contador = document.getElementById("contador");
     var resultado = parseInt(contador.innerHTML);
@@ -67,12 +67,22 @@ function agregar2(){
     
     var elemnto = document.createElement("li");
     elemnto.textContent = tarea;
+     
+    var eliminar = document.createElement("button");
+    eliminar.textContent = "eliminar";
+
+    eliminar.onclick = function(){
+        elemnto.remove();
+    }
+
+
+    elemnto.appendChild(eliminar);
 
     document.getElementById("lista1").appendChild(elemnto);
 
 
 }
-
+ //validar formulario
 function validar(){
     var nombre = document.getElementById("nombre").value;
     var email = document.getElementById("email").value;
@@ -90,7 +100,7 @@ function validar(){
 
 }
 
-
+ //suma, resta, multiplicacion y division de dos numeros
 function sumar(){
  var dato1 = parseInt(document.getElementById("dato1").value);
  var dato2 = parseInt(document.getElementById("dato2").value);
