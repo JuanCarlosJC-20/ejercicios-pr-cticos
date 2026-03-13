@@ -1,7 +1,7 @@
 
 //mostrar mensaje
 function mostrarMensaje(){
-var boton = document.getElementById("mensaje").innerHTML="hola mundo";
+var boton = document.getElementById("mensaje").innerHTML="hola chamo!";
 }
 
 
@@ -71,6 +71,9 @@ function agregar2(){
     var eliminar = document.createElement("button");
     eliminar.textContent = "eliminar";
 
+    eliminar.style.backgroundColor = "red";
+    
+
     eliminar.onclick = function(){
         elemnto.remove();
     }
@@ -87,10 +90,11 @@ function validar(){
     var nombre = document.getElementById("nombre").value;
     var email = document.getElementById("email").value;
     var numero = document.getElementById("numero").value;
+    var formulario = document.getElementById("formulario");
 
-    if(nombre == "" || email == "" || numero == ""){
+    if(nombre == "" || email == ""  || numero == ""){
     
-        document.getElementById("datos").innerHTML = "no puedes dejar los campos en blanco";
+        document.getElementById("datos").innerHTML = "<strong style='color:red'>no puedes dejar los campos en blanco</strong>";
     }
     else{
         document.getElementById("datos").innerHTML = "bienvenido "+nombre +
@@ -98,6 +102,8 @@ function validar(){
         
     }
 
+    formulario.reset();
+    
 }
 
  //suma, resta, multiplicacion y division de dos numeros
@@ -132,7 +138,31 @@ function dividir(){
   var solucion = dato1 / dato2;
  document.getElementById("result").innerHTML = solucion;
 }
-   
-   
 
+//temporalizador
+   
+let segundos = 0;
+let intervalo = null;
+const pantalla = document.getElementById('pantalla');
+
+function iniciar() {
+  
+  if (intervalo) return; 
+
+  intervalo = setInterval(() => {
+    segundos++;
+    pantalla.innerText = segundos;
+  }, 1000);
+}
+
+function detener() {
+  clearInterval(intervalo);
+  intervalo = null; // Limpiamos la referencia
+}
+
+function reiniciar() {
+  detener();
+  segundos = 0;
+  pantalla.innerText = segundos;
+}
 
