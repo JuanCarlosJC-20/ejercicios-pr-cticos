@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sistema de cuentas bancarias</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Sistema de Cuentas Bancarias</h1>
+        
+        <section class="seccion crear-cuenta">
+            <h2>Crear Nueva Cuenta</h2>
+            <div class="formulario">
+                <input type="text" id="nombreCliente" placeholder="Nombre del cliente" required>
+                <input type="number" id="saldoInicial" placeholder="Saldo inicial" min="0" value="0">
+                <button onclick="crearCuenta()">Crear Cuenta</button>
+            </div>
+        </section>
+
+        <section class="seccion seleccionar-cuenta">
+            <h2>Seleccionar Cuenta</h2>
+            <select id="cuentasDisponibles" onchange="seleccionarCuenta()">
+                <option value="">-- Selecciona una cuenta --</option>
+            </select>
+        </section>
+
+        <section class="seccion informacion-cuenta" id="infoSeccion" style="display: none;">
+            <h2>Información de la Cuenta</h2>
+            <div class="info">
+                <p><strong>Cliente:</strong> <span id="nombreTitular">-</span></p>
+                <p><strong>Saldo Disponible:</strong> <span id="saldoActual">$0.00</span></p>
+            </div>
+
+            <div class="operaciones">
+                <h3>Operaciones</h3>
+                <div class="operacion">
+                    <label for="montoIngreso">Ingresar Dinero:</label>
+                    <div class="input-grupo">
+                        <input type="number" id="montoIngreso" placeholder="Monto a ingresar" min="0" step="0.01">
+                        <button onclick="ingresarDinero()">Depositar</button>
+                    </div>
+                </div>
+
+                <div class="operacion">
+                    <label for="montoRetiro">Retirar Dinero:</label>
+                    <div class="input-grupo">
+                        <input type="number" id="montoRetiro" placeholder="Monto a retirar" min="0" step="0.01">
+                        <button onclick="retirarDinero()">Retirar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion historial-transacciones" id="historialSeccion" style="display: none;">
+            <h2>Historial de Transacciones</h2>
+            <div id="historialContenedor" class="historial">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </section>
+
+        <div id="mensaje" class="mensaje"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

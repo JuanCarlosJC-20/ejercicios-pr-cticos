@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #667eea;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor {
+  
+    border-radius: 10px;
+
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+       border-bottom: 2px solid #000000;
+}
+
+h2 {
+    color: #667eea;
+    font-size: 18px;
+    margin-bottom: 15px;
+ 
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.seccion {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.info {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.info p {
+    color: #333;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.info strong {
+    color: #667eea;
+}
+
+#saldoActual {
+    font-size: 22px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.operaciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.operacion {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.operacion label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-grupo {
+    display: flex;
+    gap: 10px;
+}
+
+.input-grupo input {
+    flex: 1;
+}
+
+.input-grupo button {
+    flex-shrink: 0;
+    min-width: 120px;
+}
+
+.historial {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.transaccion {
+    background: white;
+    padding: 12px;
+    border-radius: 5px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.transaccion.deposito {
+    border-left-color: #28a745;
+}
+
+.transaccion.retiro {
+    border-left-color: #dc3545;
+}
+
+.tipo-transaccion {
+    font-weight: 600;
+    color: #333;
+    min-width: 100px;
+}
+
+.monto {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.transaccion.deposito .monto {
+    color: #28a745;
+}
+
+.transaccion.retiro .monto {
+    color: #dc3545;
+}
+
+.fecha {
+    color: #999;
+    font-size: 12px;
+    flex: 1;
+    text-align: right;
+}
+
+.saldo-resultante {
+    color: #667eea;
+    font-weight: 600;
+    width: 100%;
+    text-align: right;
+    font-size: 13px;
+}
+
+.sin-historial {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    font-style: italic;
+}
+
+.mensaje {
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    min-height: 20px;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.mensaje.exito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .contenedor {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .input-grupo {
+        flex-direction: column;
+    }
+
+    .input-grupo button {
+        width: 100%;
+    }
+
+    .transaccion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fecha,
+    .saldo-resultante {
+        width: 100%;
+        text-align: right;
+    }
+}
